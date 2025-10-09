@@ -6,7 +6,36 @@ This project trains deep learning models (Custom CNN and MobileNetV2) to classif
 
 ## 1. Create Environment
 
-### Using Conda
+### Download miniconda
+```bash
+Invoke-WebRequest -Uri "https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe" -OutFile "miniconda.exe"
+Start-Process -FilePath ".\miniconda.exe" -ArgumentList "/S", "/D=$env:USERPROFILE\Miniconda3" -Wait
+Remove-Item .\miniconda.exe
+```
+### After installation
+
+Once done, activate Conda:
+```bash
+& "$env:USERPROFILE\Miniconda3\Scripts\conda.exe" --version
+& "$env:USERPROFILE\Miniconda3\Scripts\conda.exe" init powershell
+```
+close the terminal and reopen it:
+``` bash
+conda --version # expected output: conda 25.7.0
+```
+
+then accept terms (run these commands one by one)
+``` bash
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+```
+``` bash
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+```
+``` bash
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/msys2
+```
+
+### Then create and activate your environment:
 ```bash
 conda create -n breakhis python=3.10 -y
 conda activate breakhis
