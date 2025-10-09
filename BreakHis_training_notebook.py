@@ -1,20 +1,3 @@
-"""
-BreakHis 40x and 200x classification notebook
-- Downloads and extracts the BreaKHis_v1.tar.gz dataset (link from https://web.inf.ufpr.br/)
-- Builds patient-aware train/val/test splits (70/10/20) to avoid patient leakage
-- Implements two classifiers for each magnification (40x and 200x):
-    1) custom CNN
-    2) MobileNetV2 transfer learning
-- Applies data augmentation
-- Trains, evaluates, and saves models and history
-- Includes a short presentation (Introduction, Methods & Materials, Results, Discussion) at the bottom
-
-Notes:
-- Run this notebook in an environment with TensorFlow (2.x), scikit-learn, pandas, matplotlib.
-- Adjust paths, number of epochs, and batch sizes according to your GPU/memory limits.
-
-"""
-
 import os
 import re
 import tarfile
