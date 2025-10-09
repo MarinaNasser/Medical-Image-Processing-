@@ -1,1 +1,49 @@
 # Medical-Image-Processing-
+
+# BreakHis 40x and 200x Classification
+
+This project trains deep learning models (Custom CNN and MobileNetV2) to classify **benign vs. malignant** breast tissue using the **BreaKHis v1 dataset**. It focuses on 40x and 200x magnifications, ensuring patient-level separation to avoid data leakage.
+
+## 1. Create Environment
+
+### Using Conda
+```bash
+conda create -n breakhis python=3.10 -y
+conda activate breakhis
+```
+
+## 2. Install Requirements
+
+Make sure you are in the project root folder, then run:
+```bash
+pip install -r requirements.txt
+```
+
+The `requirements.txt` includes:
+```
+tensorflow>=2.12.0
+scikit-learn>=1.2.0
+pandas>=2.0.0
+numpy>=1.23.0
+matplotlib>=3.7.0
+requests>=2.28.0
+```
+
+
+## 3. Run Training
+
+Run the main script:
+```bash
+python BreakHis_training_notebook.py
+```
+This will:
+- Extract the dataset.
+- Create patient-aware train/val/test splits.
+- Train custom CNN and MobileNetV2 models for 40x and 200x magnifications.
+- Save model checkpoints, histories, and performance reports in `./trained_models`.
+
+## 4. Outputs
+
+- **Models:** `trained_models/mag_40/` and `trained_models/mag_200/`
+- **Reports:** JSON summaries of test accuracy, AUC, and sample counts.
+- **Histories:** Training curves (loss, accuracy, AUC) saved per model.
