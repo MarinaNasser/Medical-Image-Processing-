@@ -61,10 +61,10 @@ def filter_magnifications(source_dir: Path, dest_dir: Path, mags=MAGNIFICATIONS)
     Copy only the desired magnifications (40X and 200X) to a separate folder.
     """
     if dest_dir.exists():
-        print(f"✅ Filtered folder already exists: {dest_dir}")
+        print(f"Filtered folder already exists: {dest_dir}")
         return dest_dir
 
-    print(f"🧩 Filtering magnifications: {', '.join(mags)} ...")
+    print(f"Filtering magnifications: {', '.join(mags)} ...")
     dest_dir.mkdir(parents=True, exist_ok=True)
 
     # Walk through the dataset and copy matching magnification folders
@@ -78,7 +78,7 @@ def filter_magnifications(source_dir: Path, dest_dir: Path, mags=MAGNIFICATIONS)
                 shutil.copytree(mag_dir, target_path, dirs_exist_ok=True)
                 count += 1
 
-    print(f"✅ Done. {count} magnification folders copied to {dest_dir}")
+    print(f"Done. {count} magnification folders copied to {dest_dir}")
     return dest_dir
 
 
